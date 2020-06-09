@@ -46,6 +46,8 @@ return [
             'id'                       => 'ID',
             'id_helper'                => '',
             'name'                     => 'Name',
+            'surname'                  => 'Surname',
+            'patronymic'               => 'Patronymic',
             'name_helper'              => '',
             'email'                    => 'Email',
             'email_helper'             => '',

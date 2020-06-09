@@ -32,6 +32,12 @@
                             {{ trans('cruds.user.fields.name') }}
                         </th>
                         <th>
+                            {{ trans('cruds.user.fields.surname') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.user.fields.patronymic') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.user.fields.email') }}
                         </th>
                         <th>
@@ -55,10 +61,16 @@
 
                             </td>
                             <td>
-                                {{ $user->id ?? '' }}
+                                {{ $user->iitu_id ?? '' }}
                             </td>
                             <td>
                                 {{ $user->name ?? '' }}
+                            </td>
+                            <td>
+                                {{ $user->surname ?? '' }}
+                            </td>
+                            <td>
+                                {{ $user->patronymic ?? '' }}
                             </td>
                             <td>
                                 {{ $user->email ?? '' }}
@@ -73,6 +85,12 @@
                             </td>
                             <td>
                                 {{ $user->class->name ?? '' }}
+                            </td>
+                            <td>
+                                {{ $user->class->surname ?? '' }}
+                            </td>
+                            <td>
+                                {{ $user->class->patronymic ?? '' }}
                             </td>
                             <td>
                                 @can('user_show')
