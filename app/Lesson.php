@@ -68,7 +68,7 @@ class Lesson extends Model
             $value)->format('H:i:s') : null;
     }
 
-    function group()
+    public function group()
     {
         return $this->belongsTo(Group::class, 'group_id');
     }
@@ -76,6 +76,16 @@ class Lesson extends Model
     public function teacher()
     {
         return $this->belongsTo(User::class, 'teacher_id');
+    }
+
+    public function auditory()
+    {
+        return $this->belongsTo(Auditory::class, 'auditory_id');
+    }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class, 'course_id');
     }
 
     public static function isTimeAvailable($weekday, $startTime, $endTime, $group, $teacher, $lesson)

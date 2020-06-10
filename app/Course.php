@@ -24,7 +24,7 @@ class Course extends Model
         'deleted_at',
     ];
 
-    public function courseUsers()
+    public function courseTeachers()
     {
         return $this->belongsToMany(User::class, 'teacher_id', 'id');
     }

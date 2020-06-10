@@ -29,12 +29,12 @@ class Group extends Model
         return $this->belongsTo(Speciality::class, 'speciality_id');
     }
 
-    public function groupSchedules()
+    public function groupLessons()
     {
         return $this->hasMany(Lesson::class, 'lesson_id', 'id');
     }
 
-    public function groupUsers()
+    public function groupStudents()
     {
         return $this->hasMany(User::class, 'student_id', 'id');
     }

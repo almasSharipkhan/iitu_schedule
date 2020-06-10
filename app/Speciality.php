@@ -25,8 +25,13 @@ class Speciality extends Model
         'deleted_at',
     ];
 
-    function department()
+    public function department()
     {
         return $this->belongsTo(Department::class, 'department_id');
+    }
+
+    public function specialityGroups()
+    {
+        return $this->hasMany(Group::class, 'group_id');
     }
 }
