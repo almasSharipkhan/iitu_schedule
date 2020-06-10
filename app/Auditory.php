@@ -9,7 +9,7 @@ class Auditory extends Model
 {
     use SoftDeletes;
 
-    public $table = 'specialities';
+    public $table = 'auditories';
 
     protected $dates = [
         'created_at',

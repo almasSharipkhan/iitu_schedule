@@ -25,4 +25,8 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function getUsers(){
+        return response()->json(User::get(), 200);
+    }
 }
