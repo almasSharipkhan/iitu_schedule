@@ -3,15 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="fd7b6f58-f3dd-4a31-927e-6ee29f270af5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AdiletPidr.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Auditory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Auditory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Course.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Department.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Group.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Group.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Lesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Lesson.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Speciality.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Speciality.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_13_000007_create_role_user_pivot_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_13_000007_create_role_user_pivot_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/GroupsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GroupsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LessonsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LessonsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/Admin/LessonsApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/Admin/LessonsApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/Admin/UsersApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/Admin/UsersApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreLessonRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreLessonRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateLessonRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UpdateLessonRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/LessonTimeAvailabilityRule.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/LessonTimeAvailabilityRule.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/CalendarService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/CalendarService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/lessons/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/lessons/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/lessons/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/lessons/edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

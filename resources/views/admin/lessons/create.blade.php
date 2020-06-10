@@ -11,9 +11,9 @@
             @csrf
             <div class="form-group">
                 <label class="required" for="class_id">{{ trans('cruds.lesson.fields.class') }}</label>
-                <select class="form-control select2 {{ $errors->has('class') ? 'is-invalid' : '' }}" name="class_id" id="class_id" required>
+                <select class="form-control select2 {{ $errors->has('class') ? 'is-invalid' : '' }}" name="group_id" id="group_id" required>
                     @foreach($classes as $id => $class)
-                        <option value="{{ $id }}" {{ old('class_id') == $id ? 'selected' : '' }}>{{ $class }}</option>
+                        <option value="{{ $id }}" {{ old('group_id') == $id ? 'selected' : '' }}>{{ $class }}</option>
                     @endforeach
                 </select>
                 @if($errors->has('class'))

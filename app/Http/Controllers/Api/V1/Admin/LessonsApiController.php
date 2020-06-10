@@ -33,7 +33,7 @@ class LessonsApiController extends Controller
     {
         abort_if(Gate::denies('lesson_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return new LessonResource($lesson->load(['class', 'teacher']));
+        return new LessonResource($lesson->load(['group', 'teacher']));
     }
 
     public function update(UpdateLessonRequest $request, Lesson $lesson)

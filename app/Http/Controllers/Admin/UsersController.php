@@ -35,9 +35,9 @@ class UsersController extends Controller
 
         $roles = Role::all()->pluck('title', 'id');
 
-        $classes = Group::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $groups = Group::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.users.create', compact('roles', 'classes'));
+        return view('admin.users.create', compact('roles', '$groups'));
     }
 
     public function store(StoreUserRequest $request)
@@ -54,11 +54,11 @@ class UsersController extends Controller
 
         $roles = Role::all()->pluck('title', 'id');
 
-        $classes = Group::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $groups = Group::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $user->load('roles', 'class');
+        $user->load('roles', 'group');
 
-        return view('admin.users.edit', compact('roles', 'classes', 'user'));
+        return view('admin.users.edit', compact('roles', '$groups', 'user'));
     }
 
     public function update(UpdateUserRequest $request, User $user)
@@ -73,7 +73,7 @@ class UsersController extends Controller
     {
         abort_if(Gate::denies('user_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $user->load('roles', 'class', 'teacherLessons');
+        $user->load('roles', 'group', 'teacherLessons');
 
         return view('admin.users.show', compact('user'));
     }

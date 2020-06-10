@@ -54,9 +54,9 @@ class GroupsController extends Controller
     {
         abort_if(Gate::denies('group_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $group->load('groupLessons', 'groupUsers');
+        $group->load('groupLessons', 'groupStudents');
 
-        return view('admin.groups.show', compact('group'));
+        return view('admin.school-classes.show', compact('group'));
     }
 
     public function destroy(Group $group)
