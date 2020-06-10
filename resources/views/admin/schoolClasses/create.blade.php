@@ -21,10 +21,10 @@
             </div>
 
             <div class="form-group">
-                <label for="speciality_id">{{ trans('cruds.speciality.fields.name') }}</label>
-                <select class="form-control select2 {{ $errors->has('group') ? 'is-invalid' : '' }}" name="speciality_id" id="speciality_id">
+                <label class="required" for="speciality_id">{{ trans('cruds.group.fields.speciality') }}</label>
+                <select class="form-control select2 {{ $errors->has('speciality') ? 'is-invalid' : '' }}" name="speciality_id" id="speciality_id" required>
                     @foreach($specialities as $id => $speciality)
-                        <option value="{{ $id }}" {{ old('speciality_id') == $id ? 'selected' : '' }}>{{ $speciality->code.'-'.$speciality->name }}</option>
+                        <option value="{{ $id }}" {{ old('speciality_id') == $id ? 'selected' : '' }}>{{ $speciality }}</option>
                     @endforeach
                 </select>
                 @if($errors->has('speciality'))
@@ -32,10 +32,8 @@
                         {{ $errors->first('speciality') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.speciality.fields.speciality_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.group.fields.speciality_helper') }}</span>
             </div>
-
-
 
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
