@@ -19,7 +19,6 @@ class Auditory extends Model
 
     protected $fillable = [
         'name',
-        'code',
         'capacity',
         'type',
         'created_at',

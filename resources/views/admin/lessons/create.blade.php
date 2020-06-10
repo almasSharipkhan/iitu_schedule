@@ -10,18 +10,18 @@
         <form method="POST" action="{{ route("admin.lessons.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label class="required" for="group_id">{{ trans('cruds.lesson.fields.class') }}</label>
+                <label class="required" for="group_id">{{ trans('cruds.lesson.fields.group') }}</label>
                 <select class="form-control select2 {{ $errors->has('class') ? 'is-invalid' : '' }}" name="group_id" id="group_id" required>
                     @foreach($groups as $id => $group)
                         <option value="{{ $id }}" {{ old('group_id') == $id ? 'selected' : '' }}>{{ $group }}</option>
                     @endforeach
                 </select>
-                @if($errors->has('class'))
+                @if($errors->has('group'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('class') }}
+                        {{ $errors->first('group') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.lesson.fields.class_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.lesson.fields.group_helper') }}</span>
             </div>
             <div class="form-group">
                 <label class="required" for="teacher_id">{{ trans('cruds.lesson.fields.teacher') }}</label>
@@ -36,6 +36,20 @@
                     </div>
                 @endif
                 <span class="help-block">{{ trans('cruds.lesson.fields.teacher_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label class="required" for="auditory_id">{{ trans('cruds.lesson.fields.auditory') }}</label>
+                <select class="form-control select2 {{ $errors->has('auditory') ? 'is-invalid' : '' }}" name="auditory_id" id="auditory_id" required>
+                    @foreach($auditories as $id => $auditory)
+                        <option value="{{ $id }}" {{ old('auditory_id') == $id ? 'selected' : '' }}>{{ $auditory }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('auditory'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('auditory') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.lesson.fields.auditory_helper') }}</span>
             </div>
             <div class="form-group">
                 <label class="required" for="weekday">{{ trans('cruds.lesson.fields.weekday') }}</label>
