@@ -36,14 +36,17 @@ class User extends Authenticatable
         'patronymic',
         'email',
         'password',
-        'group_id',
-        'speciality_id',
-        'department_id',
         'created_at',
         'updated_at',
         'deleted_at',
         'remember_token',
         'email_verified_at',
+    ];
+
+    protected $attributes = [
+        'group_id' => null,
+        'speciality_id' => null,
+        'department_id' => null,
     ];
 
     public function getIsAdminAttribute()

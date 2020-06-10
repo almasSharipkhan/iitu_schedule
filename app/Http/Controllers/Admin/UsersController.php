@@ -37,7 +37,7 @@ class UsersController extends Controller
 
         $groups = Group::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.users.create', compact('roles', '$groups'));
+        return view('admin.users.create', compact('roles', 'groups'));
     }
 
     public function store(StoreUserRequest $request)

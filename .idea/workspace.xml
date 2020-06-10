@@ -3,20 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fd7b6f58-f3dd-4a31-927e-6ee29f270af5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/cruds.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/cruds.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/calendar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/calendar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/lessons/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/lessons/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/lessons/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/lessons/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/lessons/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/lessons/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/lessons/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/lessons/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/schoolClasses/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/schoolClasses/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/schoolClasses/relationships/classLessons.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/schoolClasses/relationships/classLessons.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/schoolClasses/relationships/classUsers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/schoolClasses/relationships/classUsers.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/relationships/teacherLessons.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/relationships/teacherLessons.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
