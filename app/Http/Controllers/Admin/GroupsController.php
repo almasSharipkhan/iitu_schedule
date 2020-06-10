@@ -27,7 +27,7 @@ class GroupsController extends Controller
     {
         abort_if(Gate::denies('group_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $specialities = Speciality::all();
+        $specialities = Speciality::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');;
 
         return view('admin.schoolClasses.create', compact('specialities'));
     }
@@ -35,7 +35,6 @@ class GroupsController extends Controller
     public function store(StoreGroupRequest $request)
     {
         $group = Group::create($request->all());
-        $group->speciality()->sync($request->input('speciality_id', []));
 
         return redirect()->route('admin.school-classes.index');
     }

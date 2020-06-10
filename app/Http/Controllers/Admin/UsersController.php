@@ -45,7 +45,6 @@ class UsersController extends Controller
         $user = User::create($request->all());
         $user->roles()->sync($request->input('roles', []));
 
-        $group = new Group;
         return redirect()->route('admin.users.index');
     }
 
