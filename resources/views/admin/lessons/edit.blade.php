@@ -11,18 +11,18 @@
             @method('PUT')
             @csrf
             <div class="form-group">
-                <label class="required" for="class_id">{{ trans('cruds.lesson.fields.class') }}</label>
-                <select class="form-control select2 {{ $errors->has('class') ? 'is-invalid' : '' }}" name="class_id" id="class_id" required>
-                    @foreach($classes as $id => $class)
-                        <option value="{{ $id }}" {{ ($lesson->class ? $lesson->class->id : old('class_id')) == $id ? 'selected' : '' }}>{{ $class }}</option>
+                <label class="required" for="group_id">{{ trans('cruds.lesson.fields.group') }}</label>
+                <select class="form-control select2 {{ $errors->has('group') ? 'is-invalid' : '' }}" name="group_id" id="group_id" required>
+                    @foreach($groups as $id => $group)
+                        <option value="{{ $id }}" {{ ($lesson->group ? $lesson->group->id : old('group_id')) == $id ? 'selected' : '' }}>{{ $group }}</option>
                     @endforeach
                 </select>
-                @if($errors->has('class'))
+                @if($errors->has('group'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('class') }}
+                        {{ $errors->first('group') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.lesson.fields.class_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.lesson.fields.group_helper') }}</span>
             </div>
             <div class="form-group">
                 <label class="required" for="teacher_id">{{ trans('cruds.lesson.fields.teacher') }}</label>

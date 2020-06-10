@@ -20,7 +20,7 @@ class UpdateLessonRequest extends FormRequest
     public function rules()
     {
         return [
-            'class_id'   => [
+            'group_id'   => [
                 'required',
                 'integer'],
             'teacher_id' => [

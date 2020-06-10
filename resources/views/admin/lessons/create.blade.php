@@ -10,10 +10,10 @@
         <form method="POST" action="{{ route("admin.lessons.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label class="required" for="class_id">{{ trans('cruds.lesson.fields.class') }}</label>
-                <select class="form-control select2 {{ $errors->has('class') ? 'is-invalid' : '' }}" name="class_id" id="class_id" required>
-                    @foreach($classes as $id => $class)
-                        <option value="{{ $id }}" {{ old('class_id') == $id ? 'selected' : '' }}>{{ $class }}</option>
+                <label class="required" for="group_id">{{ trans('cruds.lesson.fields.class') }}</label>
+                <select class="form-control select2 {{ $errors->has('class') ? 'is-invalid' : '' }}" name="group_id" id="group_id" required>
+                    @foreach($groups as $id => $group)
+                        <option value="{{ $id }}" {{ old('group_id') == $id ? 'selected' : '' }}>{{ $group }}</option>
                     @endforeach
                 </select>
                 @if($errors->has('class'))

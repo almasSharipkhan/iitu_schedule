@@ -22,11 +22,12 @@ class LessonTimeAvailabilityRule implements Rule
      *
      * @param  string  $attribute
      * @param  mixed  $value
+     * @param  mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)
     {
-       return Lesson::isTimeAvailable(request()->input('weekday'), $value, request()->input('end_time'), request()->input('class_id'), request()->input('teacher_id'), $this->lesson);
+       return Lesson::isTimeAvailable(request()->input('weekday'), $value, request()->input('end_time'), request()->input('group_id'), request()->input('teacher_id'), $this->lesson);
     }
 
     /**

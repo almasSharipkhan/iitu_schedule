@@ -26,7 +26,7 @@ class CalendarService
                 if ($lesson)
                 {
                     array_push($calendarData[$timeText], [
-                        'class_name'   => $lesson->class->name,
+                        'group_name'   => $lesson->group->name,
                         'teacher_name' => $lesson->teacher->name,
                         'rowspan'      => $lesson->difference/30 ?? ''
                     ]);

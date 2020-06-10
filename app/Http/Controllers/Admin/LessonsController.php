@@ -28,11 +28,11 @@ class LessonsController extends Controller
     {
         abort_if(Gate::denies('lesson_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $classes = Group::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $groups = Group::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $teachers = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.lessons.create', compact('classes', 'teachers'));
+        return view('admin.lessons.create', compact('groups', 'teachers'));
     }
 
     public function store(StoreLessonRequest $request)
@@ -46,13 +46,13 @@ class LessonsController extends Controller
     {
         abort_if(Gate::denies('lesson_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $classes = Group::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $groups = Group::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $teachers = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $lesson->load('class', 'teacher');
+        $lesson->load('group', 'teacher');
 
-        return view('admin.lessons.edit', compact('classes', 'teachers', 'lesson'));
+        return view('admin.lessons.edit', compact('groups', 'teachers', 'lesson'));
     }
 
     public function update(UpdateLessonRequest $request, Lesson $lesson)
@@ -66,7 +66,7 @@ class LessonsController extends Controller
     {
         abort_if(Gate::denies('lesson_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $lesson->load('class', 'teacher');
+        $lesson->load('group', 'teacher');
 
         return view('admin.lessons.show', compact('lesson'));
     }

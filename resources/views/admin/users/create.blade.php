@@ -62,18 +62,18 @@
                 <input type="hidden" name="roles[]" value="4">
             @endif
             <div class="form-group">
-                <label for="class_id">{{ trans('cruds.user.fields.class') }}</label>
-                <select class="form-control select2 {{ $errors->has('class') ? 'is-invalid' : '' }}" name="class_id" id="class_id">
-                    @foreach($classes as $id => $class)
-                        <option value="{{ $id }}" {{ old('class_id') == $id ? 'selected' : '' }}>{{ $class }}</option>
+                <label for="group_id">{{ trans('cruds.user.fields.group') }}</label>
+                <select class="form-control select2 {{ $errors->has('group') ? 'is-invalid' : '' }}" name="group_id" id="group_id">
+                    @foreach($groups as $id => $group)
+                        <option value="{{ $id }}" {{ old('group_id') == $id ? 'selected' : '' }}>{{ $group }}</option>
                     @endforeach
                 </select>
-                @if($errors->has('class'))
+                @if($errors->has('group'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('class') }}
+                        {{ $errors->first('group') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.user.fields.class_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.user.fields.group_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

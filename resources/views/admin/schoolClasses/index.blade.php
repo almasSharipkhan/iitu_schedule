@@ -49,7 +49,7 @@
                                 {{ $group->name ?? '' }}
                             </td>
                             <td>
-                                <a href="{{ route('admin.calendar.index') }}?class_id={{ $group->id }}">View Schedule</a>
+                                <a href="{{ route('admin.calendar.index') }}?group_id={{ $group->id }}">View Schedule</a>
                             </td>
                             <td>
                                 @can('group_show')
@@ -65,7 +65,7 @@
                                 @endcan
 
                                 @can('group_delete')
-                                    <form action="{{ route('admin.school-classes.destroy', $schoolClass->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                    <form action="{{ route('admin.school-classes.destroy', $group->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
