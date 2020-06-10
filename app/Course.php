@@ -24,8 +24,18 @@ class Course extends Model
         'deleted_at',
     ];
 
-    public function classUsers()
+    public function courseUsers()
     {
         return $this->belongsToMany(User::class, 'teacher_id', 'id');
+    }
+
+    public function courseAuditories()
+    {
+        return $this->hasMany(Auditory::class, 'auditory_id', 'id');
+    }
+
+    public function courseLessons()
+    {
+        return $this->hasMany(Lesson::class, 'lesson_id', 'id');
     }
 }

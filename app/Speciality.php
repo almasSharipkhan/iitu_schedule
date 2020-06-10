@@ -25,7 +25,7 @@ class Speciality extends Model
         'deleted_at',
     ];
 
-    function class()
+    function department()
     {
         return $this->belongsTo(Department::class, 'department_id');
     }

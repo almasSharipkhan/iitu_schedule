@@ -25,7 +25,7 @@ class Department extends Model
         'deleted_at',
     ];
 
-    public function classSpecialities()
+    public function departmentSpecialities()
     {
         return $this->hasMany(Speciality::class, 'speciality_id', 'id');
     }

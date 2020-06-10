@@ -24,17 +24,17 @@ class Group extends Model
         'deleted_at',
     ];
 
-    function class()
+    public function speciality()
     {
         return $this->belongsTo(Speciality::class, 'speciality_id');
     }
 
-    public function classSchedules()
+    public function groupSchedules()
     {
         return $this->hasMany(Lesson::class, 'lesson_id', 'id');
     }
 
-    public function classUsers()
+    public function groupUsers()
     {
         return $this->hasMany(User::class, 'student_id', 'id');
     }

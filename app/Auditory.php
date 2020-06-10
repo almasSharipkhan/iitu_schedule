@@ -27,7 +27,7 @@ class Auditory extends Model
         'deleted_at',
     ];
 
-    public function classLessons()
+    public function auditoryLessons()
     {
         return $this->hasMany(Lesson::class, 'lesson_id');
     }

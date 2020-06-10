@@ -63,6 +63,11 @@ class User extends Authenticatable
 
     public function teacherLessons()
     {
+        return $this->hasMany(Lesson::class, 'teacher_id', 'id');
+    }
+
+    public function teacherCourses()
+    {
         return $this->hasMany(Course::class, 'teacher_id', 'id');
     }
 
@@ -93,7 +98,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
-    function class()
+    public function group()
     {
         return $this->belongsTo(Group::class, 'group_id');
     }

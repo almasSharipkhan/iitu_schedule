@@ -68,7 +68,7 @@ class Lesson extends Model
             $value)->format('H:i:s') : null;
     }
 
-    function class()
+    public function group()
     {
         return $this->belongsTo(Group::class, 'group_id');
     }
