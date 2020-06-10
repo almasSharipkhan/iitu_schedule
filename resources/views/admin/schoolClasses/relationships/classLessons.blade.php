@@ -25,7 +25,7 @@
                             {{ trans('cruds.lesson.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.lesson.fields.class') }}
+                            {{ trans('cruds.lesson.fields.group') }}
                         </th>
                         <th>
                             {{ trans('cruds.lesson.fields.teacher') }}
@@ -54,7 +54,7 @@
                                 {{ $lesson->id ?? '' }}
                             </td>
                             <td>
-                                {{ $lesson->class->name ?? '' }}
+                                {{ $lesson->group->name ?? '' }}
                             </td>
                             <td>
                                 {{ $lesson->teacher->name ?? '' }}

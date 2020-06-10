@@ -25,10 +25,10 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.lesson.fields.class') }}
+                            {{ trans('cruds.lesson.fields.group') }}
                         </th>
                         <td>
-                            {{ $lesson->class->name ?? '' }}
+                            {{ $lesson->group->name ?? '' }}
                         </td>
                     </tr>
                     <tr>

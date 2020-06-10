@@ -59,10 +59,10 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.class') }}
+                            {{ trans('cruds.user.fields.group') }}
                         </th>
                         <td>
-                            {{ $user->class->name ?? '' }}
+                            {{ $user->group->name ?? '' }}
                         </td>
                     </tr>
                 </tbody>

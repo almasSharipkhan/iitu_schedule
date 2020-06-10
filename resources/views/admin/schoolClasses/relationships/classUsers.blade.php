@@ -37,7 +37,7 @@
                             {{ trans('cruds.user.fields.roles') }}
                         </th>
                         <th>
-                            {{ trans('cruds.user.fields.class') }}
+                            {{ trans('cruds.user.fields.group') }}
                         </th>
                         <th>
                             &nbsp;
@@ -68,7 +68,7 @@
                                 @endforeach
                             </td>
                             <td>
-                                {{ $user->class->name ?? '' }}
+                                {{ $user->group->name ?? '' }}
                             </td>
                             <td>
                                 @can('user_show')
