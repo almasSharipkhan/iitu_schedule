@@ -20,7 +20,15 @@
                             {{ trans('cruds.user.fields.id') }}
                         </th>
                         <td>
-                            {{ $user->id }}
+                            {{ $user->iitu_id }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.user.fields.surname') }}
+                        </th>
+                        <td>
+                            {{ $user->surname }}
                         </td>
                     </tr>
                     <tr>
@@ -33,18 +41,18 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.email') }}
+                            {{ trans('cruds.user.fields.patronymic') }}
                         </th>
                         <td>
-                            {{ $user->email }}
+                            {{ $user->patronymic }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.user.fields.email_verified_at') }}
+                            {{ trans('cruds.user.fields.email') }}
                         </th>
                         <td>
-                            {{ $user->email_verified_at }}
+                            {{ $user->email }}
                         </td>
                     </tr>
                     <tr>

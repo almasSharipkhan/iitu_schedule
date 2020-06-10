@@ -58,11 +58,11 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.user.fields.roles_helper') }}</span>
             </div>
-            <div class="form-group">
+            <<div class="form-group">
                 <label for="group_id">{{ trans('cruds.user.fields.group') }}</label>
                 <select class="form-control select2 {{ $errors->has('group') ? 'is-invalid' : '' }}" name="group_id" id="group_id">
                     @foreach($groups as $id => $group)
-                        <option value="{{ $id }}" {{ ($user->group ? $user->group->id : old('group_id')) == $id ? 'selected' : '' }}>{{ $group }}</option>
+                        <option value="{{ $id }}" {{ old('group_id') == $id ? 'selected' : '' }}>{{ $group }}</option>
                     @endforeach
                 </select>
                 @if($errors->has('group'))

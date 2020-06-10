@@ -19,6 +19,7 @@ class Group extends Model
 
     protected $fillable = [
         'name',
+        'speciality_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -26,7 +27,7 @@ class Group extends Model
 
     public function speciality()
     {
-        return $this->hasMany(Speciality::class, 'speciality_id');
+        return $this->belongsTo(Speciality::class, 'speciality_id');
     }
 
     public function groupLessons()

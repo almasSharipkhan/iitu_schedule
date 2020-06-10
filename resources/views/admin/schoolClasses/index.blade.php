@@ -23,7 +23,7 @@
 
                         </th>
                         <th>
-                            {{ trans('cruds.group.fields.id') }}
+                            {{ trans('cruds.group.fields.speciality_id') }}
                         </th>
                         <th>
                             {{ trans('cruds.group.fields.name') }}
@@ -43,7 +43,7 @@
 
                             </td>
                             <td>
-                                {{ $group->id ?? '' }}
+                                {{ $group->speciality->name ?? '' }}
                             </td>
                             <td>
                                 {{ $group->name ?? '' }}

@@ -56,9 +56,9 @@ class UsersController extends Controller
 
         $groups = Group::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $user->load('roles', 'group');
+        $user->load('roles');
 
-        return view('admin.users.edit', compact('roles', '$groups', 'user'));
+        return view('admin.users.edit', compact('roles', 'groups', 'user'));
     }
 
     public function update(UpdateUserRequest $request, User $user)
