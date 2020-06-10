@@ -22,9 +22,6 @@
             <table class=" table table-bordered table-striped table-hover datatable datatable-User">
                 <thead>
                     <tr>
-                        <th width="10">
-
-                        </th>
                         <th>
                             {{ trans('cruds.user.fields.id') }}
                         </th>
@@ -57,9 +54,7 @@
                 <tbody>
                     @foreach($users as $key => $user)
                         <tr data-entry-id="{{ $user->id }}">
-                            <td>
 
-                            </td>
                             <td>
                                 {{ $user->iitu_id ?? '' }}
                             </td>

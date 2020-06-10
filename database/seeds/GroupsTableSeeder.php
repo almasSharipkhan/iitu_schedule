@@ -14,13 +14,25 @@ class GroupsTableSeeder extends Seeder
     {
         $classes = [
             [
-                'id' => 1,
-                'name' => 'First class'
+                'name' => 'ITM-1806',
+                'speciality_id' => 1,
             ],
             [
-                'id' => 2,
-                'name' => 'Second class'
-            ]
+                'name' => 'CSSE-1604',
+                'speciality_id' => 2,
+            ],
+            [
+                'name' => 'IS-1604',
+                'speciality_id' => 4,
+            ],
+            [
+                'name' => 'FIN-1604',
+                'speciality_id' => 5,
+            ],
+            [
+                'name' => 'RET-1604',
+                'speciality_id' => 6,
+            ],
         ];
 
         Group::insert($classes);
