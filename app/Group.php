@@ -26,7 +26,7 @@ class Group extends Model
 
     public function speciality()
     {
-        return $this->belongsTo(Speciality::class, 'speciality_id');
+        return $this->hasMany(Speciality::class, 'speciality_id');
     }
 
     public function groupLessons()
