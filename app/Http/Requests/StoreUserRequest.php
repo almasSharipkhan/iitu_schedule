@@ -19,7 +19,13 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         return [
+            'iitu_id'  => [
+                'required'],
+            'surname'  => [
+                'required'],
             'name'     => [
+                'required'],
+            'patronymic' => [
                 'required'],
             'email'    => [
                 'required',
