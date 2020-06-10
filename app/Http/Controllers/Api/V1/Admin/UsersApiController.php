@@ -55,4 +55,13 @@ class UsersApiController extends Controller
 
         return response(null, Response::HTTP_NO_CONTENT);
     }
+
+    public function getAllUsers(){
+        $teachers = User::all();
+        $users = User::with('roles')->where('name','admin')->get();
+
+
+
+        return response()->json($users, 200);
+    }
 }

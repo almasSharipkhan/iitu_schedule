@@ -18,10 +18,10 @@ class CreateAuditoriesTable extends Migration
             $table->string('name');
             $table->integer('capacity');
             $table->enum('type', [
-                'Lecture',
-                'Computer',
-                'Physics',
-                'Robotics'
+                1=>'Lecture',
+                2=>'Computer',
+                3=>'Physics',
+                4=>'Robotics'
             ]);
             $table->timestamps();
         });
