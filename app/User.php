@@ -41,10 +41,10 @@ class User extends Authenticatable
         'deleted_at',
         'remember_token',
         'email_verified_at',
+        'group_id',
     ];
 
     protected $attributes = [
-        'group_id' => null,
         'speciality_id' => null,
         'department_id' => null,
     ];

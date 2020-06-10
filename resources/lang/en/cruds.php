@@ -45,6 +45,7 @@ return [
         'fields'         => [
             'id'                       => 'ID',
             'id_helper'                => '',
+            'iitu_id'                  => 'ID',
             'name'                     => 'Name',
             'surname'                  => 'Surname',
             'patronymic'               => 'Patronymic',
