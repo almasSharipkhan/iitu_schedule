@@ -21,6 +21,8 @@ class StoreGroupRequest extends FormRequest
         return [
             'name' => [
                 'required'],
+            'speciality_id' => [
+                'required'],
         ];
     }
 }

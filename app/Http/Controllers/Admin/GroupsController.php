@@ -7,6 +7,7 @@ use App\Http\Requests\MassDestroyGroupRequest;
 use App\Http\Requests\StoreGroupRequest;
 use App\Http\Requests\UpdateGroupRequest;
 use App\Group;
+use App\Speciality;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,12 +27,15 @@ class GroupsController extends Controller
     {
         abort_if(Gate::denies('group_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.groups.create');
+        $specialities = Speciality::all();
+
+        return view('admin.schoolClasses.create', compact('specialities'));
     }
 
     public function store(StoreGroupRequest $request)
     {
         $group = Group::create($request->all());
+        $group->speciality()->sync($request->input('speciality_id', []));
 
         return redirect()->route('admin.school-classes.index');
     }

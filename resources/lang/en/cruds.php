@@ -109,4 +109,21 @@ return [
             'deleted_at_helper' => '',
         ],
     ],
+    'speciality'    => [
+        'title'          => 'Specialities',
+        'title_singular' => 'Speciality',
+        'fields'         => [
+            'id'                => 'ID',
+            'code'                => 'Code',
+            'id_helper'         => '',
+            'name'              => 'Speciality',
+            'speciality_helper'       => '',
+            'created_at'        => 'Created at',
+            'created_at_helper' => '',
+            'updated_at'        => 'Updated at',
+            'updated_at_helper' => '',
+            'deleted_at'        => 'Deleted at',
+            'deleted_at_helper' => '',
+        ],
+    ],
 ];

@@ -12,7 +12,7 @@ class GroupsTableSeeder extends Seeder
      */
     public function run()
     {
-        $classes = [
+        $groups = [
             [
                 'name' => 'ITM-1806',
                 'speciality_id' => 1,
@@ -35,6 +35,6 @@ class GroupsTableSeeder extends Seeder
             ],
         ];
 
-        Group::insert($classes);
+        Group::insert($groups);
     }
 }

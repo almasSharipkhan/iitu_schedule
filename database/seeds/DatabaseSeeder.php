@@ -8,7 +8,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             DepartmentsTableSeeder::class,
-
             SpecialitiesTableSeeder::class,
             GroupsTableSeeder::class,
             PermissionsTableSeeder::class,

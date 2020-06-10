@@ -26,6 +26,12 @@ class StoreLessonRequest extends FormRequest
             'teacher_id' => [
                 'required',
                 'integer'],
+            'auditory_id' => [
+                'required',
+                'integer'],
+            'course_id' => [
+                'required',
+                'integer'],
             'weekday'    => [
                 'required',
                 'integer',

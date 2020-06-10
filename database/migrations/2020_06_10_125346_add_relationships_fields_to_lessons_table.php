@@ -20,6 +20,8 @@ class AddRelationshipsFieldsToLessonsTable extends Migration
             $table->foreign('teacher_id')->references('id')->on('users');
             $table->unsignedInteger('group_id');
             $table->foreign('group_id')->references('id')->on('groups');
+            $table->unsignedInteger('auditory_id');
+            $table->foreign('auditory_id')->references('id')->on('auditories');
         });
     }
 

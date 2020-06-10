@@ -19,7 +19,13 @@ class UpdateUserRequest extends FormRequest
     public function rules()
     {
         return [
+            'iitu_id'    => [
+                'required'],
             'name'    => [
+                'required'],
+            'surname'    => [
+                'required'],
+            'patronymic'    => [
                 'required'],
             'email'   => [
                 'required',

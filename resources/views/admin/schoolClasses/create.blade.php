@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <form method="POST" action="{{ route("admin.group.store") }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route("admin.school-classes.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label class="required" for="name">{{ trans('cruds.group.fields.name') }}</label>
@@ -19,6 +19,24 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.group.fields.name_helper') }}</span>
             </div>
+
+            <div class="form-group">
+                <label for="speciality_id">{{ trans('cruds.speciality.fields.name') }}</label>
+                <select class="form-control select2 {{ $errors->has('group') ? 'is-invalid' : '' }}" name="speciality_id" id="speciality_id">
+                    @foreach($specialities as $id => $speciality)
+                        <option value="{{ $id }}" {{ old('speciality_id') == $id ? 'selected' : '' }}>{{ $speciality->code.'-'.$speciality->name }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('speciality'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('speciality') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.speciality.fields.speciality_helper') }}</span>
+            </div>
+
+
+
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
