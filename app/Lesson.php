@@ -10,6 +10,7 @@ class Lesson extends Model
 {
     use SoftDeletes;
 
+
     public $table = 'lessons';
 
     protected $dates = [
@@ -20,10 +21,11 @@ class Lesson extends Model
 
     protected $fillable = [
         'weekday',
-        'class_id',
-        'end_time',
+        'group_id',
         'teacher_id',
+        'auditory_id',
         'start_time',
+        'end_time',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -68,7 +70,7 @@ class Lesson extends Model
 
     function class()
     {
-        return $this->belongsTo(SchoolClass::class, 'class_id');
+        return $this->belongsTo(Group::class, 'group_id');
     }
 
     public function teacher()
@@ -76,14 +78,14 @@ class Lesson extends Model
         return $this->belongsTo(User::class, 'teacher_id');
     }
 
-    public static function isTimeAvailable($weekday, $startTime, $endTime, $class, $teacher, $lesson)
+    public static function isTimeAvailable($weekday, $startTime, $endTime, $group, $teacher, $lesson)
     {
         $lessons = self::where('weekday', $weekday)
             ->when($lesson, function ($query) use ($lesson) {
                 $query->where('id', '!=', $lesson);
             })
-            ->where(function ($query) use ($class, $teacher) {
-                $query->where('class_id', $class)
+            ->where(function ($query) use ($group, $teacher) {
+                $query->where('group_id', $group)
                     ->orWhere('teacher_id', $teacher);
             })
             ->where([
@@ -95,18 +97,18 @@ class Lesson extends Model
         return !$lessons;
     }
 
-    public function scopeCalendarByRoleOrClassId($query)
+    public function scopeCalendarByRoleOrGroupId($query)
     {
-        return $query->when(!request()->input('class_id'), function ($query) {
+        return $query->when(!request()->input('group_id'), function ($query) {
             $query->when(auth()->user()->is_teacher, function ($query) {
                 $query->where('teacher_id', auth()->user()->id);
             })
                 ->when(auth()->user()->is_student, function ($query) {
-                    $query->where('class_id', auth()->user()->class_id ?? '0');
+                    $query->where('group_id', auth()->user()->group_id ?? '0');
                 });
         })
-            ->when(request()->input('class_id'), function ($query) {
-                $query->where('class_id', request()->input('class_id'));
+            ->when(request()->input('group_id'), function ($query) {
+                $query->where('group_id', request()->input('group_id'));
             });
     }
 }

@@ -30,11 +30,15 @@ class User extends Authenticatable
     ];
 
     protected $fillable = [
-        'first_name',
-        'last_name',
+        'iitu_id',
+        'name',
+        'surname',
+        'patronymic',
         'email',
         'password',
-        'class_id',
+        'group_id',
+        'speciality_id',
+        'department_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -59,7 +63,7 @@ class User extends Authenticatable
 
     public function teacherLessons()
     {
-        return $this->hasMany(Lesson::class, 'teacher_id', 'id');
+        return $this->hasMany(Course::class, 'teacher_id', 'id');
     }
 
     public function getEmailVerifiedAtAttribute($value)
@@ -91,6 +95,6 @@ class User extends Authenticatable
 
     function class()
     {
-        return $this->belongsTo(SchoolClass::class, 'class_id');
+        return $this->belongsTo(Group::class, 'group_id');
     }
 }
