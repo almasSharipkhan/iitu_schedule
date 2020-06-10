@@ -68,13 +68,13 @@
                     </ul>
                 </li>
             @endcan
-            @can('school_class_access')
+            @can('group_access')
                 <li class="nav-item">
                     <a href="{{ route("admin.school-classes.index") }}" class="nav-link {{ request()->is('admin/school-classes') || request()->is('admin/school-classes/*') ? 'active' : '' }}">
                         <i class="fa-fw fas fa-school nav-icon">
 
                         </i>
-                        {{ trans('cruds.schoolClass.title') }}
+                        {{ trans('cruds.group.title') }}
                     </a>
                 </li>
             @endcan

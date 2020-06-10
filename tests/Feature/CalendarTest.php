@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use App\Lesson;
 use App\Role;
-use App\SchoolClass;
+use App\Group;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -43,7 +43,7 @@ class CalendarTest extends TestCase
     public function testCalendarPageShowsLessonForTeacher()
     {
         // Create class
-        $schoolClass = SchoolClass::create([
+        $group = Group::create([
             'name' => 'Class no.1'
         ]);
 
@@ -64,12 +64,12 @@ class CalendarTest extends TestCase
             'start_time' => '10:00',
             'end_time' => '12:00',
             'teacher_id' => $teacher->id,
-            'class_id' => $schoolClass->id,
+            'class_id' => $group->id,
         ]);
 
         $response = $this->actingAs($teacher)->get('/admin/calendar');
 
         $response->assertSuccessful();
-        $response->assertSeeText($schoolClass->name);
+        $response->assertSeeText($group->name);
     }
 }

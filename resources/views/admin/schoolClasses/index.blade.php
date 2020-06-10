@@ -1,32 +1,32 @@
 @extends('layouts.admin')
 @section('content')
-@can('school_class_create')
+@can('group_create')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route("admin.school-classes.create") }}">
-                {{ trans('global.add') }} {{ trans('cruds.schoolClass.title_singular') }}
+                {{ trans('global.add') }} {{ trans('cruds.group.title_singular') }}
             </a>
         </div>
     </div>
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.schoolClass.title_singular') }} {{ trans('global.list') }}
+        {{ trans('cruds.group.title_singular') }} {{ trans('global.list') }}
     </div>
 
     <div class="card-body">
         <div class="table-responsive">
-            <table class=" table table-bordered table-striped table-hover datatable datatable-SchoolClass">
+            <table class=" table table-bordered table-striped table-hover datatable datatable-Group">
                 <thead>
                     <tr>
                         <th width="10">
 
                         </th>
                         <th>
-                            {{ trans('cruds.schoolClass.fields.id') }}
+                            {{ trans('cruds.group.fields.id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.schoolClass.fields.name') }}
+                            {{ trans('cruds.group.fields.name') }}
                         </th>
                         <th>
                             Schedule
@@ -37,34 +37,34 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($schoolClasses as $key => $schoolClass)
-                        <tr data-entry-id="{{ $schoolClass->id }}">
+                    @foreach($groups as $key => $group)
+                        <tr data-entry-id="{{ $group->id }}">
                             <td>
 
                             </td>
                             <td>
-                                {{ $schoolClass->id ?? '' }}
+                                {{ $group->id ?? '' }}
                             </td>
                             <td>
-                                {{ $schoolClass->name ?? '' }}
+                                {{ $group->name ?? '' }}
                             </td>
                             <td>
-                                <a href="{{ route('admin.calendar.index') }}?class_id={{ $schoolClass->id }}">View Schedule</a>
+                                <a href="{{ route('admin.calendar.index') }}?class_id={{ $group->id }}">View Schedule</a>
                             </td>
                             <td>
-                                @can('school_class_show')
-                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.school-classes.show', $schoolClass->id) }}">
+                                @can('group_show')
+                                    <a class="btn btn-xs btn-primary" href="{{ route('admin.school-classes.show', $group->id) }}">
                                         {{ trans('global.view') }}
                                     </a>
                                 @endcan
 
-                                @can('school_class_edit')
-                                    <a class="btn btn-xs btn-info" href="{{ route('admin.school-classes.edit', $schoolClass->id) }}">
+                                @can('group_edit')
+                                    <a class="btn btn-xs btn-info" href="{{ route('admin.school-classes.edit', $group->id) }}">
                                         {{ trans('global.edit') }}
                                     </a>
                                 @endcan
 
-                                @can('school_class_delete')
+                                @can('group_delete')
                                     <form action="{{ route('admin.school-classes.destroy', $schoolClass->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                         <input type="hidden" name="_method" value="DELETE">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -90,7 +90,7 @@
 <script>
     $(function () {
   let dtButtons = $.extend(true, [], $.fn.dataTable.defaults.buttons)
-@can('school_class_delete')
+@can('group_delete')
   let deleteButtonTrans = '{{ trans('global.datatables.delete') }}'
   let deleteButton = {
     text: deleteButtonTrans,
@@ -124,7 +124,7 @@
     order: [[ 1, 'desc' ]],
     pageLength: 100,
   });
-  $('.datatable-SchoolClass:not(.ajaxTable)').DataTable({ buttons: dtButtons })
+  $('.datatable-Group:not(.ajaxTable)').DataTable({ buttons: dtButtons })
     $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
         $($.fn.dataTable.tables(true)).DataTable()
             .columns.adjust();

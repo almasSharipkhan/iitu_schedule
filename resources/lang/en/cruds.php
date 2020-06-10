@@ -93,9 +93,9 @@ return [
             'class_helper'      => '',
         ],
     ],
-    'schoolClass'    => [
-        'title'          => 'School Classes',
-        'title_singular' => 'School Class',
+    'group'    => [
+        'title'          => 'Groups',
+        'title_singular' => 'Group',
         'fields'         => [
             'id'                => 'ID',
             'id_helper'         => '',

@@ -13,6 +13,6 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
     // Lessons
     Route::apiResource('lessons', 'LessonsApiController');
 
-    // School Classes
-    Route::apiResource('school-classes', 'SchoolClassesApiController');
+    // Groups
+    Route::apiResource('school-classes', 'GroupsApiController');
 });

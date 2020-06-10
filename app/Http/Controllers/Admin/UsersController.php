@@ -7,7 +7,7 @@ use App\Http\Requests\MassDestroyUserRequest;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Role;
-use App\SchoolClass;
+use App\Group;
 use App\User;
 use Gate;
 use Illuminate\Http\Request;
@@ -35,7 +35,7 @@ class UsersController extends Controller
 
         $roles = Role::all()->pluck('title', 'id');
 
-        $classes = SchoolClass::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $classes = Group::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         return view('admin.users.create', compact('roles', 'classes'));
     }
@@ -54,7 +54,7 @@ class UsersController extends Controller
 
         $roles = Role::all()->pluck('title', 'id');
 
-        $classes = SchoolClass::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $classes = Group::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $user->load('roles', 'class');
 

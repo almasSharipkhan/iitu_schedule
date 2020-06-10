@@ -1,9 +1,9 @@
 <?php
 
-use App\SchoolClass;
+use App\Group;
 use Illuminate\Database\Seeder;
 
-class SchoolClassesTableSeeder extends Seeder
+class GroupsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -23,6 +23,6 @@ class SchoolClassesTableSeeder extends Seeder
             ]
         ];
 
-        SchoolClass::insert($classes);
+        Group::insert($classes);
     }
 }

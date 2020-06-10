@@ -10,10 +10,10 @@ class DatabaseSeeder extends Seeder
             PermissionsTableSeeder::class,
             RolesTableSeeder::class,
             PermissionRoleTableSeeder::class,
-            SchoolClassesTableSeeder::class,
+            //GroupsTableSeeder::class,
             UsersTableSeeder::class,
             RoleUserTableSeeder::class,
-            LessonsTableSeeder::class,
+            //LessonsTableSeeder::class,
         ]);
     }
 }

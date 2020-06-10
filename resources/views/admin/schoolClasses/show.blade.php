@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.schoolClass.title') }}
+        {{ trans('global.show') }} {{ trans('cruds.group.title') }}
     </div>
 
     <div class="card-body">
@@ -17,18 +17,18 @@
                 <tbody>
                     <tr>
                         <th>
-                            {{ trans('cruds.schoolClass.fields.id') }}
+                            {{ trans('cruds.group.fields.id') }}
                         </th>
                         <td>
-                            {{ $schoolClass->id }}
+                            {{ $group->id }}
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.schoolClass.fields.name') }}
+                            {{ trans('cruds.group.fields.name') }}
                         </th>
                         <td>
-                            {{ $schoolClass->name }}
+                            {{ $group->name }}
                         </td>
                     </tr>
                 </tbody>
@@ -60,10 +60,10 @@
     </ul>
     <div class="tab-content">
         <div class="tab-pane" role="tabpanel" id="class_lessons">
-            @includeIf('admin.schoolClasses.relationships.classLessons', ['lessons' => $schoolClass->classLessons])
+            @includeIf('admin.groups.relationships.classLessons', ['lessons' => $group->classLessons])
         </div>
         <div class="tab-pane" role="tabpanel" id="class_users">
-            @includeIf('admin.schoolClasses.relationships.classUsers', ['users' => $schoolClass->classUsers])
+            @includeIf('admin.groups.relationships.classUsers', ['users' => $group->classUsers])
         </div>
     </div>
 </div>

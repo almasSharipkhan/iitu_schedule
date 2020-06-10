@@ -2,7 +2,7 @@
 
 Route::redirect('/', '/login');
 Route::get('/home', function () {
-    $routeName = auth()->user() && (auth()->user()->is_student || auth()->user()->is_teacher) ? 'admin.calendar.index' : 'admin.home'; 
+    $routeName = auth()->user() && (auth()->user()->is_student || auth()->user()->is_teacher) ? 'admin.calendar.index' : 'admin.home';
     if (session('status')) {
         return redirect()->route($routeName)->with('status', session('status'));
     }
@@ -31,9 +31,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('lessons/destroy', 'LessonsController@massDestroy')->name('lessons.massDestroy');
     Route::resource('lessons', 'LessonsController');
 
-    // School Classes
-    Route::delete('school-classes/destroy', 'SchoolClassesController@massDestroy')->name('school-classes.massDestroy');
-    Route::resource('school-classes', 'SchoolClassesController');
+    // Groups
+    Route::delete('school-classes/destroy', 'GroupsController@massDestroy')->name('school-classes.massDestroy');
+    Route::resource('school-classes', 'GroupsController');
 
     Route::get('calendar', 'CalendarController@index')->name('calendar.index');
 });

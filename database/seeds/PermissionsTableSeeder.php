@@ -94,23 +94,23 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => '22',
-                'title' => 'school_class_create',
+                'title' => 'group_create',
             ],
             [
                 'id'    => '23',
-                'title' => 'school_class_edit',
+                'title' => 'group_edit',
             ],
             [
                 'id'    => '24',
-                'title' => 'school_class_show',
+                'title' => 'group_show',
             ],
             [
                 'id'    => '25',
-                'title' => 'school_class_delete',
+                'title' => 'group_delete',
             ],
             [
                 'id'    => '26',
-                'title' => 'school_class_access',
+                'title' => 'group_access',
             ],
         ];
 

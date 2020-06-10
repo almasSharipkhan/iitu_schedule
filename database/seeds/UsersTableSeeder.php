@@ -14,10 +14,12 @@ class UsersTableSeeder extends Seeder
                 'surname'        => 'Adminov',
                 'patronymic'     => 'Adminovich',
                 'email'          => 'admin@admin.com',
+                'group_id'       => null,
+                'speciality_id'  => null,
+                'department_id'  => null,
                 'password'       => '$2y$10$HvSDJRBDVWwRd18qj5oaQOF0DBXqnZcyFJ4dJA8hcQGAfmyZ7xkei',
                 'remember_token' => null,
-                'class_id'       => null,
-            ],
+            ],/*
             [
                 'iitu_id'        => 2,
                 'name'           => 'Madina',
@@ -77,7 +79,7 @@ class UsersTableSeeder extends Seeder
                 'password'       => '$2y$10$HvSDJRBDVWwRd18qj5oaQOF0DBXqnZcyFJ4dJA8hcQGAfmyZ7xkei',
                 'remember_token' => null,
                 'class_id'       => 1,
-            ],
+            ],*/
         ];
 
         User::insert($users);

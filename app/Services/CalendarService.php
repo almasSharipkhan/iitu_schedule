@@ -10,8 +10,8 @@ class CalendarService
     {
         $calendarData = [];
         $timeRange = (new TimeService)->generateTimeRange(config('app.calendar.start_time'), config('app.calendar.end_time'));
-        $lessons   = Lesson::with('class', 'teacher')
-            ->calendarByRoleOrClassId()
+        $lessons   = Lesson::with('group', 'teacher')
+            ->calendarByRoleOrGroupId()
             ->get();
 
         foreach ($timeRange as $time)
