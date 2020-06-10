@@ -9,7 +9,7 @@ class Auditory extends Model
 {
     use SoftDeletes;
 
-    public $table = 'specialities';
+    public $table = 'auditories';
 
     protected $dates = [
         'created_at',
@@ -19,7 +19,6 @@ class Auditory extends Model
 
     protected $fillable = [
         'name',
-        'code',
         'capacity',
         'type',
         'created_at',
