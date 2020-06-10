@@ -57,11 +57,9 @@ class UsersApiController extends Controller
     }
 
     public function getAllUsers(){
-        $teachers = User::all();
-        $users = User::with('roles')->where('name','admin')->get();
 
+        $techers = User::whereHas('roles', function($q){$q->whereIn('role_id', [3]);})->get();
 
-
-        return response()->json($users, 200);
+        return response()->json($techers, 200);
     }
 }
