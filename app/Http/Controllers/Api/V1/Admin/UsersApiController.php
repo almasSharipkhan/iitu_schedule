@@ -62,4 +62,15 @@ class UsersApiController extends Controller
 
         return response()->json($techers, 200);
     }
+
+     public function getLikeUsers(Request $request, $name){
+         Console::info($name);
+         error_log($name);
+         $techers = User::query()
+             ->where('name', 'LIKE', "%{$name}%")
+             ->orWhere('email', 'LIKE', "%{$name}%")
+             ->get();
+
+         return response()->json($techers, 200);
+     }
 }

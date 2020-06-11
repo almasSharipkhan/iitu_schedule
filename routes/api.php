@@ -37,6 +37,8 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
 
 Route::get('users', 'Api\V1\Admin\UsersApiController@getAllUsers');
 
+Route::get('lessons', 'Api\V1\Admin\LessonsApiController@getLessons');
+
 //Route::get('/user', 'Api\V1\Admin\UserApiController@getAllUsers');
 
 
