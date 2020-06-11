@@ -24,6 +24,7 @@ class Lesson extends Model
         'group_id',
         'teacher_id',
         'auditory_id',
+        'course_id',
         'start_time',
         'end_time',
         'created_at',

@@ -20,6 +20,7 @@ class Speciality extends Model
     protected $fillable = [
         'name',
         'code',
+        'department_id',
         'created_at',
         'updated_at',
         'deleted_at',

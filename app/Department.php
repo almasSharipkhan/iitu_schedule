@@ -29,4 +29,9 @@ class Department extends Model
     {
         return $this->hasMany(Speciality::class, 'speciality_id', 'id');
     }
+
+    public function departmentTeachers()
+    {
+        return $this->hasMany(User::class, 'teacher_id', 'id');
+    }
 }

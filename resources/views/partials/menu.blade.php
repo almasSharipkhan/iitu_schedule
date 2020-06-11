@@ -89,14 +89,6 @@
                 </li>
             @endcan
             <li class="nav-item">
-                <a href="{{ route("admin.calendar.index") }}" class="nav-link {{ request()->is('admin/calendar') || request()->is('admin/calendar/*') ? 'active' : '' }}">
-                    <i class="fa-fw fas fa-calendar nav-icon">
-
-                    </i>
-                    Calendar
-                </a>
-            </li>
-            <li class="nav-item">
                 <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
                     <i class="nav-icon fas fa-fw fa-sign-out-alt">
 

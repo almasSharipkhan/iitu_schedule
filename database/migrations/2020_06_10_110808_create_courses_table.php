@@ -17,8 +17,8 @@ class CreateCoursesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('lecture');
-            $table->string('practica');
-            $table->string('labaratory');
+            $table->string('practice');
+            $table->string('laboratory');
             $table->timestamps();
             $table->softDeletes();
         });

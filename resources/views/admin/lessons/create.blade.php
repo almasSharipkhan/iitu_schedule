@@ -24,6 +24,20 @@
                 <span class="help-block">{{ trans('cruds.lesson.fields.group_helper') }}</span>
             </div>
             <div class="form-group">
+                <label class="required" for="course_id">{{ trans('cruds.lesson.fields.course') }}</label>
+                <select class="form-control select2 {{ $errors->has('course') ? 'is-invalid' : '' }}" name="course_id" id="course_id" required>
+                    @foreach($courses as $id => $course)
+                        <option value="{{ $id }}" {{ old('course_id') == $id ? 'selected' : '' }}>{{ $course }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('course'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('course') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.lesson.fields.course_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label class="required" for="teacher_id">{{ trans('cruds.lesson.fields.teacher') }}</label>
                 <select class="form-control select2 {{ $errors->has('teacher') ? 'is-invalid' : '' }}" name="teacher_id" id="teacher_id" required>
                     @foreach($teachers as $id => $teacher)

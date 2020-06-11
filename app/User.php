@@ -42,11 +42,7 @@ class User extends Authenticatable
         'remember_token',
         'email_verified_at',
         'group_id',
-    ];
-
-    protected $attributes = [
-        'speciality_id' => null,
-        'department_id' => null,
+        'department_id',
     ];
 
     public function getIsAdminAttribute()
@@ -104,5 +100,10 @@ class User extends Authenticatable
     public function group()
     {
         return $this->belongsTo(Group::class, 'group_id');
+    }
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class, 'department_id');
     }
 }

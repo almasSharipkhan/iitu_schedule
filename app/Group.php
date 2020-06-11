@@ -39,4 +39,19 @@ class Group extends Model
     {
         return $this->hasMany(User::class, 'student_id', 'id');
     }
+
+    public function groupCourses()
+    {
+        return $this->hasMany(Course::class, 'course_id', 'id');
+    }
+
+    public function studentQuantity()
+    {
+        /*
+         *
+         * SELECT group.id,COUNT(users.username) FROM groups
+           INNER JOIN users ON users.group_id=groups.id
+           GROUP BY groups.id
+         */
+    }
 }

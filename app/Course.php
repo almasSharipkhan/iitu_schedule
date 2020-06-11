@@ -19,7 +19,9 @@ class Course extends Model
 
     protected $fillable = [
         'name',
-        'code',
+        'lecture',
+        'practice',
+        'laboratory',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -38,5 +40,10 @@ class Course extends Model
     public function courseLessons()
     {
         return $this->hasMany(Lesson::class, 'lesson_id', 'id');
+    }
+
+    public function courseGroups()
+    {
+        return $this->belongsToMany(Group::class, 'group_id', 'id');
     }
 }

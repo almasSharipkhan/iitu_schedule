@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Auditory;
+use App\Course;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyLessonRequest;
 use App\Http\Requests\StoreLessonRequest;
@@ -35,7 +36,9 @@ class LessonsController extends Controller
 
         $auditories = Auditory::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.lessons.create', compact('groups', 'teachers', 'auditories'));
+        $courses = Course::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+
+        return view('admin.lessons.create', compact('groups', 'teachers', 'auditories', 'courses'));
     }
 
     public function store(StoreLessonRequest $request)

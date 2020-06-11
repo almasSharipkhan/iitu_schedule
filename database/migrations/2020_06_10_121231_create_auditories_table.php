@@ -24,6 +24,7 @@ class CreateAuditoriesTable extends Migration
                 4=>'Robotics'
             ]);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
